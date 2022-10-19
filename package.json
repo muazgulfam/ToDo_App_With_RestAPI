@@ -1,0 +1,26 @@
+{
+  "name": "todo_app_with_restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.mjs",
+    "dev": "nodemon app.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muazgulfam/ToDo_App_With_RestAPI.git"
+  },
+  "author": "Maaz Jee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muazgulfam/ToDo_App_With_RestAPI/issues"
+  },
+  "homepage": "https://github.com/muazgulfam/ToDo_App_With_RestAPI#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5"
+  }
+}
