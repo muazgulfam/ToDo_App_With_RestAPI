@@ -19,6 +19,7 @@
 
     <button onclick="getAllTodos()">Refresh</button>
 
+    <h5 id="message"></h5>
     <h3 id="result"></h3>
 
     <script>
@@ -31,7 +32,7 @@
                 // handle success
                 console.log(response.data);
 
-                document.querySelector("#result").innerHTML = response.data.message;
+                document.querySelector("#message").innerHTML = response.data.message;
                     //response.data.data.map(eachTodo => {
                         //document.querySelector("#result").innerHTML += eachTodo
                         //document.querySelector("#result").innerHTML = '<br>'
