@@ -57,6 +57,49 @@ app.get('/todos', (req,res) => {
     });
 })
 
+
+app.delete('/todos', (req,res) => {
+    todoModel.deleteMany({}, 
+    (err, data) => {
+        if(!err){
+            res.send({
+                message:"All Todo has been Deleted successfully",
+            })
+        }
+        else{
+            res.server(500).send({
+                message:"Server Error"
+            })
+        }
+    });
+})
+
+
+app.delete('/todo/:id', (req,res) => {
+    todoModel.deleteOne({_id: req.params.id}, 
+    (err, deletedData) => {
+        console.log("deleted: ", deletedData)
+        if(!err){
+            if(deletedData.deletedCount !== 0){
+                res.send({
+                message:"Your selected Todo has been Deleted successfully",
+                })
+            } 
+            else{
+                res.send({
+                message:"No Todo exist with uch Id" + req.params.id,
+                })
+            } 
+        }
+        else{
+            res.server(500).send({
+                message:"Server Error"
+            })
+        }
+    });
+})
+
+
 app.listen(port, () => {
   console.log(`my app listening on port ${port}`)
 })
