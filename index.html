@@ -32,7 +32,13 @@
                 // handle success
                 console.log(response.data);
 
+                getAllTodos();
+
                 document.querySelector("#message").innerHTML = response.data.message;
+                setTimeout(() => {
+                    document.querySelector("#message").innerHTML = "";
+                },4000);
+
                     //response.data.data.map(eachTodo => {
                         //document.querySelector("#result").innerHTML += eachTodo
                         //document.querySelector("#result").innerHTML = '<br>'
